@@ -22,7 +22,7 @@
 </style>
 
 <div id="mapid"</div>
-<script src="https://peterajohnson.github.io/points.geojson" type="text/javascript"></script>
+<script src="peterajohnson.github.io/points.geojson" type="text/javascript"></script>
 <script type='text/javascript'>
 	var mymap = L.map('mapid').setView([43.466, -80.53], 15);
 
@@ -35,7 +35,7 @@
         layer.bindPopup("<b>" + feature.properties.Point + "</b> is located at " + feature.geometry.coordinates + "  lat/long.");
     }
 	}
-	var points = new L.geojson(points, {
+	var points = new L.geojson(peterajohnson.github.io/points, {
 		onEachFeature: onEachFeature
 	}).addTo(mymap);
 </script>
