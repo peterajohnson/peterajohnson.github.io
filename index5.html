@@ -22,20 +22,22 @@
 </style>
 
 <div id="mapid"</div>
-<script>
-
+<script src="coffeeshop.geojson" type="text/javascript"></script>
+<script type='text/javascript'>
 	var mymap = L.map('mapid').setView([43.466, -80.53], 15);
 
 	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 	}).addTo(mymap);
 
-	L.marker([43.466, -80.53]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-</script>
-
-
-
-</body>
+	function onEachFeature(feature, layer) {
+    if (feature.properties) {
+        layer.bindPopup("<b>" + feature.properties.name + "</b> serves a small coffee for $" + feature.properties.coffee_pri);
+    }
+	}
+	var coffeeshop = new L.geoJson(coffeeshop, {
+		onEachFeature: onEachFeature
+	}).addTo(map);
+	</script>
+ </body>
 </html>

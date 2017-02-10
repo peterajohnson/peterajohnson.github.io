@@ -18,7 +18,7 @@
 
 <style>
     	body { margin:0; padding:0; }
-    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:50%; height:80%;}
+    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:500px; height:500px;}
 </style>
 
 <div id="mapid"</div>
@@ -29,9 +29,6 @@
 	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 	}).addTo(mymap);
-
-	L.marker([43.466, -80.53]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
 </script>
 
