@@ -22,7 +22,7 @@
 </style>
 
 <div id="mapid"</div>
-<script src="coffeeshop.geojson" type="text/javascript"></script>
+<script src="coffeeshop.geoJson" type="text/javascript"></script>
 <script type='text/javascript'>
 	var mymap = L.map('mapid').setView([43.466, -80.53], 15);
 
@@ -37,7 +37,7 @@
 	}
 	var coffeeshop = new L.geoJson(coffeeshop, {
 		onEachFeature: onEachFeature
-	}).addTo(map);
+	}).addTo(mymap);
 	</script>
  </body>
 </html>
